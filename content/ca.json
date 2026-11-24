@@ -1,0 +1,281 @@
+{
+  "lang": "ca",
+  "locale": "ca_ES",
+  "langName": "Català",
+  "paths": { "home": "", "legal": "avis-legal.html", "privacy": "privacitat.html", "cookies": "cookies.html" },
+  "meta": {
+    "title": "Ca n'Aleix · Casa pairal del segle XV a Verdú (Urgell)",
+    "description": "Casa rural sencera per a 8 persones al cor de Verdú, a tocar de la Plaça Major. Pedra del segle XV, llar de foc, terrassa amb barbacoa i vi de la DO Costers del Segre."
+  },
+  "ui": {
+    "skip": "Salta al contingut",
+    "menu": "Menú",
+    "closeMenu": "Tanca el menú",
+    "langSwitch": "Castellano",
+    "langSwitchLabel": "Versió en castellà",
+    "demo": "Vista prèvia de disseny per a Ca n'Aleix · Les fotografies són d'arxiu (Pexels) i se substituiran per les de la casa.",
+    "close": "Tanca",
+    "prev": "Anterior",
+    "next": "Següent",
+    "photoOf": "Foto {n} de {total}",
+    "openPhoto": "Amplia la foto",
+    "km": "{km} km",
+    "people": "persones",
+    "upTo": "Fins a {n} persones",
+    "from": "Des de",
+    "perNight": "per persona i nit",
+    "backHome": "Torna a l'inici"
+  },
+  "nav": [
+    { "href": "#casa", "label": "La casa" },
+    { "href": "#historia", "label": "Història" },
+    { "href": "#galeria", "label": "Galeria" },
+    { "href": "#entorn", "label": "Entorn" },
+    { "href": "#opinions", "label": "Opinions" }
+  ],
+  "navCta": "Reserva",
+  "hero": {
+    "eyebrow": "Casa pairal del segle XV · Verdú, l'Urgell",
+    "title": "Ca n'Aleix",
+    "lead": "Cinc segles de pedra a tocar de la Plaça Major. Una casa sencera, només per a vosaltres.",
+    "ctaPrimary": "Consulta disponibilitat",
+    "ctaSecondary": "Descobreix la casa",
+    "quick": {
+      "title": "Planifica l'escapada",
+      "checkIn": "Entrada",
+      "checkOut": "Sortida",
+      "guests": "Persones",
+      "submit": "Consulta"
+    },
+    "imageAlt": "Façana d'una casa pairal de pedra amb portal adovellat, envoltada d'arbres"
+  },
+  "stats": [
+    { "key": "capacity", "label": "persones" },
+    { "key": "bedrooms", "label": "dormitoris" },
+    { "key": "beds", "label": "llits" },
+    { "key": "bathrooms", "label": "banys" }
+  ],
+  "house": {
+    "kicker": "La casa",
+    "title": "Pedra antiga, comoditat d'avui",
+    "body": [
+      "Ca n'Aleix és una casa pairal del segle XV al nucli antic de Verdú, a pocs passos de la Plaça Major i del castell. Es va rehabilitar el 2007 per acollir famílies i grups d'amics sense perdre l'ànima de pedra i fusta.",
+      "La llogueu sencera: quatre dormitoris, dos banys, cuina americana oberta al menjador, sala d'estar amb llar de foc, un pati interior i una terrassa amb barbacoa per allargar les sobretaules."
+    ],
+    "roomsTitle": "Com dormireu",
+    "rooms": [
+      "Dos dormitoris de matrimoni",
+      "Un tercer dormitori",
+      "Sofà llit de matrimoni a la sala d'estar",
+      "Bressol disponible a petició"
+    ],
+    "spacesTitle": "Espais",
+    "spaces": [
+      "Cuina americana totalment equipada",
+      "Menjador i sala d'estar amb llar de foc",
+      "Pati interior",
+      "Terrassa amb barbacoa"
+    ],
+    "amenitiesTitle": "Tot el que hi trobareu",
+    "imageAlt": "Porta de fusta en una paret de pedra amb testos de plantes a banda i banda"
+  },
+  "amenities": {
+    "fireplace": "Llar de foc",
+    "heating": "Calefacció",
+    "aircon": "Aire condicionat",
+    "kitchen": "Cuina equipada",
+    "washer": "Rentadora",
+    "microwave": "Microones",
+    "tv": "Televisió",
+    "music": "Equip de música",
+    "foosball": "Futbolí",
+    "wifi": "Wifi",
+    "crib": "Bressol",
+    "pets": "S'admeten mascotes",
+    "terrace": "Terrassa",
+    "bbq": "Barbacoa",
+    "pool": "Piscina de temporada",
+    "card": "Pagament amb targeta"
+  },
+  "history": {
+    "kicker": "Història",
+    "title": "Cinc-cents anys entre aquestes parets",
+    "items": [
+      { "year": "s. XV", "title": "Una casa a la vila closa", "text": "Es construeix al cor de Verdú, el poble de la ceràmica negra, a l'ombra del castell i de l'església de Santa Maria." },
+      { "year": "Llinatge", "title": "La família del General Prim", "text": "La casa va pertànyer a la família de Joan Prim, una de les figures més conegudes de la Catalunya del segle XIX." },
+      { "year": "2007", "title": "Una rehabilitació amb respecte", "text": "Es reforma per convertir-la en casa de turisme rural, mantenint la pedra, les bigues i el caràcter de casa pairal." },
+      { "year": "Avui", "title": "Les portes obertes", "text": "En Manel us rep en català, castellà, anglès o francès, i us dona els millors consells per descobrir l'Urgell." }
+    ]
+  },
+  "gallery": {
+    "kicker": "Galeria",
+    "title": "Racons per quedar-s'hi",
+    "note": "Fotografies d'arxiu orientatives. A la versió definitiva hi aniran les fotos reals de Ca n'Aleix.",
+    "alts": {
+      "lounge": "Sala d'estar acollidora amb butaques, coixins i una llar de foc de pedra al fons",
+      "bedroom": "Dormitori de matrimoni amb paret de pedra, bigues de fusta i cobrellit blau",
+      "kitchen": "Cuina oberta amb prestatges de fusta, nevera blanca i taula de menjar",
+      "fireplace": "Llar de foc encesa amb llinda de fusta antiga i prestatgeria blanca al costat",
+      "dining": "Taula de fusta al costat d'una finestra amb un aparador ple de vaixella",
+      "pool": "Piscina envoltada de gespa i arbres amb muntanyes al fons",
+      "door": "Porta de fusta en una paret de pedra amb testos de plantes",
+      "street": "Carrer empedrat d'un poble medieval amb cases de pedra i balcons"
+    }
+  },
+  "houses": {
+    "kicker": "Per a grups",
+    "title": "Dues cases, un mateix poble",
+    "lead": "A pocs minuts a peu de Ca n'Aleix hi ha la seva germana, L'Era de Cal Roger. Llogueu-les juntes i reuniu fins a 16 persones per a celebracions, retrobades o colles d'amics.",
+    "items": {
+      "ca-naleix": {
+        "name": "Ca n'Aleix",
+        "text": "Casa pairal del segle XV al nucli antic, amb llar de foc, pati interior i terrassa.",
+        "alt": "Façana de pedra d'una casa pairal amb portal adovellat"
+      },
+      "era-cal-roger": {
+        "name": "L'Era de Cal Roger",
+        "text": "Jardí amb barbacoa i forn de pedra, hort, gallines i piscina. Ideal amb nens.",
+        "alt": "Piscina envoltada de gespa i arbres"
+      }
+    },
+    "registration": "Registre turístic",
+    "groupCta": "Demana pressupost per a les dues cases"
+  },
+  "surroundings": {
+    "kicker": "Entorn",
+    "title": "L'Urgell, a ritme lent",
+    "lead": "Entre el Pirineu i el mar, a una hora de tots dos. Vinyes, castells, rutes en BTT i pobles medievals per descobrir sense presses.",
+    "tabs": { "village": "A Verdú", "around": "Pobles i oci", "nature": "Vi i natura", "festivals": "Festes" },
+    "months": { "jan": "Gener", "aug": "Agost", "sep": "Setembre", "oct": "Octubre" },
+    "places": {
+      "castle": { "name": "Castell de Verdú", "text": "Puja a la torre per veure el poble i la plana des de dalt." },
+      "church": { "name": "Església de Santa Maria", "text": "Visites guiades des de l'Oficina de Turisme de Verdú." },
+      "claver": { "name": "Casa-santuari de Sant Pere Claver", "text": "Casa natal del sant, fill il·lustre de Verdú." },
+      "museum": { "name": "Museu d'Arqueologia", "text": "Col·lecció Ramon Boleda i restes del jaciment ibèric dels Estinclells." },
+      "ceramics": { "name": "Tallers de ceràmica", "text": "La ceràmica negra tradicional, elaborada encara avui als obradors del poble." },
+      "talavero": { "name": "Centre d'Art Cal Talaveró", "text": "Exposicions d'art contemporani en un edifici històric." },
+      "tarrega": { "name": "Tàrrega", "text": "Museu Cal Trepat, parc de Sant Eloi i la Fira de Teatre al Carrer." },
+      "riding": { "name": "Hípica", "text": "Rutes a cavall pels camps de l'Urgell." },
+      "guimera": { "name": "Guimerà", "text": "Un dels pobles medievals més bonics de Catalunya." },
+      "golf": { "name": "Camp de golf", "text": "Per a una jornada diferent." },
+      "cervera": { "name": "Cervera", "text": "La Universitat, el nucli antic i la ruta dels castells." },
+      "agramunt": { "name": "Agramunt", "text": "Fira del Torró i museus." },
+      "portaventura": { "name": "PortAventura", "text": "Una excursió de dia amb els més petits." },
+      "wine": { "name": "DO Costers del Segre", "text": "Cellers de Verdú i rodalia, tasts i enoturisme. També molins d'oli de la comarca." },
+      "btt": { "name": "BTT i senderisme", "text": "Itineraris pel GR-3 i el PR-25, entre camps i vinyes." },
+      "ignasi": { "name": "Camí Ignasià", "text": "L'antic camí de peregrinació passa per Verdú." },
+      "cister": { "name": "Ruta del Cister", "text": "Vallbona de les Monges i la vall del Corb, a tocar." },
+      "ivars": { "name": "Estany d'Ivars i Vila-sana", "text": "El llac interior més gran de Catalunya, ideal per observar ocells." },
+      "harvest": { "name": "Festa de la Verema", "text": "Primer cap de setmana d'octubre." },
+      "festamajor": { "name": "Festa Major de Verdú", "text": "Primer cap de setmana de setembre." },
+      "flavia": { "name": "Festa de Sant Flavià", "text": "Segona setmana de gener." },
+      "medieval": { "name": "Mercat Medieval de Guimerà", "text": "Un cap de setmana d'agost, a 12 km." }
+    },
+    "imageAlt": "Vinyes en una costa amb la plana i les muntanyes al fons, a la posta de sol",
+    "image2Alt": "Arc de pedra que dona pas a un carreró empedrat d'un poble medieval"
+  },
+  "reviews": {
+    "kicker": "Opinions",
+    "title": "El que expliquen els hostes",
+    "note": "Resum d'opinions publicades a {source}.",
+    "items": {
+      "gloria": "Ens va encantar estar entre el Pirineu i les platges. Ambient familiar, terrassa i piscina, i un amfitrió que et proposa activitats i fins i tot cuina per a tu. Molt bona relació qualitat-preu.",
+      "xenia": "Una estada fantàstica. Tracte molt proper, una zona perfecta per anar en bici i productes de la comarca boníssims.",
+      "marc": "Tranquil·litat absoluta: hort, piscina, forn de pedra, barbacoa, gallines… i un vi de la zona excel·lent.",
+      "francesc": "Casa molt ben equipada, amb jardí, barbacoa i hort. Tranquil·litat i un tracte immillorable per part del propietari."
+    }
+  },
+  "booking": {
+    "kicker": "Reserva",
+    "title": "Consulta disponibilitat",
+    "lead": "Digueu-nos dates i quants sereu. En Manel us respondrà amb el preu exacte i la disponibilitat.",
+    "priceNote": "El preu final depèn de les dates i del nombre de persones.",
+    "contactTitle": "Contacte directe",
+    "fields": {
+      "name": "Nom i cognoms",
+      "email": "Correu electrònic",
+      "phone": "Telèfon",
+      "phoneHint": "Opcional",
+      "house": "Allotjament",
+      "checkIn": "Entrada",
+      "checkOut": "Sortida",
+      "adults": "Adults",
+      "children": "Nens",
+      "message": "Comentaris",
+      "messagePlaceholder": "Celebrem un aniversari, venim amb gos…",
+      "privacy": "He llegit i accepto la {link}.",
+      "privacyLink": "política de privacitat",
+      "submit": "Envia la sol·licitud"
+    },
+    "houseOptions": {
+      "ca-naleix": "Ca n'Aleix (fins a 8)",
+      "era-cal-roger": "L'Era de Cal Roger (fins a 8)",
+      "both": "Les dues cases (fins a 16)"
+    },
+    "errors": {
+      "dates": "La data de sortida ha de ser posterior a la d'entrada.",
+      "past": "La data d'entrada no pot ser anterior a avui.",
+      "capacity": "Sou {n} persones i l'allotjament triat admet fins a {max}.",
+      "required": "Revisa els camps marcats."
+    },
+    "success": {
+      "title": "Gràcies! Sol·licitud preparada",
+      "text": "Aquesta és una vista prèvia, així que no s'ha enviat res. A la web definitiva, la sol·licitud arribarà directament al correu de Ca n'Aleix i rebreu una còpia."
+    },
+    "basic": "Info pràctica"
+  },
+  "faq": {
+    "kicker": "Preguntes freqüents",
+    "title": "Abans de venir",
+    "items": [
+      { "q": "A quina hora puc entrar i sortir?", "a": "L'entrada és de {checkInFrom} a {checkInUntil} i la sortida, fins a les {checkOutUntil}. Si necessiteu un altre horari, digueu-nos-ho i ho mirem." },
+      { "q": "Podem venir amb gos?", "a": "Sí, les mascotes hi són benvingudes. Aviseu-nos quan feu la sol·licitud." },
+      { "q": "Hi ha bressol per al nadó?", "a": "Sí, tenim bressol disponible. Demaneu-lo al formulari." },
+      { "q": "Es pot pagar amb targeta?", "a": "Sí, s'accepta el pagament amb targeta." },
+      { "q": "Com s'hi arriba?", "a": "Verdú és a 5 km de Tàrrega. Des de Barcelona o Lleida, per l'autovia A-2 fins a Tàrrega i després uns minuts per carretera local." }
+    ]
+  },
+  "location": {
+    "kicker": "On som",
+    "title": "Al cor de Verdú",
+    "mapConsent": "El mapa es carrega des d'OpenStreetMap. En activar-lo, el vostre navegador s'hi connectarà.",
+    "mapButton": "Mostra el mapa",
+    "mapTitle": "Mapa amb la ubicació de Ca n'Aleix a Verdú",
+    "directions": "Com arribar-hi (Google Maps)",
+    "distancesTitle": "Distàncies"
+  },
+  "footer": {
+    "tagline": "Casa pairal del segle XV a Verdú, l'Urgell.",
+    "legal": "Avís legal",
+    "privacy": "Privacitat",
+    "cookies": "Cookies",
+    "demo": "Web de demostració. Imatges: Pexels."
+  },
+  "legalPages": {
+    "legal": {
+      "title": "Avís legal",
+      "body": [
+        "En compliment de la Llei 34/2002, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE), s'informa que aquest lloc web és titularitat de [Nom o raó social del titular], amb NIF [NIF] i domicili a C/ Arquebisbe Terés, 10, 25340 Verdú (Lleida). Correu de contacte: {email}.",
+        "Ca n'Aleix està inscrita al Registre de Turisme de Catalunya amb el número {registration}.",
+        "Els continguts d'aquest web tenen caràcter informatiu. El titular no es fa responsable de l'ús que se'n pugui fer ni dels continguts de webs de tercers enllaçats."
+      ]
+    },
+    "privacy": {
+      "title": "Política de privacitat",
+      "body": [
+        "Responsable del tractament: [Nom o raó social del titular], C/ Arquebisbe Terés, 10, 25340 Verdú (Lleida). Contacte: {email}.",
+        "Finalitat: respondre les sol·licituds de disponibilitat i gestionar les reserves. Base jurídica: el vostre consentiment i l'aplicació de mesures precontractuals.",
+        "Conservació: les dades es conserven el temps necessari per atendre la sol·licitud i complir les obligacions legals. No es cedeixen a tercers excepte per obligació legal.",
+        "Drets: podeu exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a {email}, i presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (aepd.es).",
+        "Recursos externs: aquesta vista prèvia carrega les fotografies des de Pexels. El mapa d'OpenStreetMap només es carrega si l'activeu. A la versió definitiva totes les imatges se serviran des del mateix domini."
+      ]
+    },
+    "cookies": {
+      "title": "Política de cookies",
+      "body": [
+        "Aquest web no utilitza cookies pròpies ni de tercers amb finalitats analítiques o publicitàries, i per això no mostra cap bàner de consentiment.",
+        "El mapa d'OpenStreetMap només es carrega quan el voleu veure. En aquell moment, OpenStreetMap pot tractar dades tècniques de la connexió d'acord amb la seva pròpia política."
+      ]
+    }
+  }
+}

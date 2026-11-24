@@ -1,0 +1,90 @@
+{
+  "siteUrl": "https://yaagourd06-cmd.github.io/ca-naleix/",
+  "indexable": false,
+  "defaultLang": "ca",
+  "langs": ["ca", "es"],
+  "name": "Ca n'Aleix",
+  "email": "info@canaleix.es",
+  "address": {
+    "street": "C/ Arquebisbe Terés, 10",
+    "postalCode": "25340",
+    "locality": "Verdú",
+    "region": "Lleida",
+    "country": "ES"
+  },
+  "geo": { "lat": 41.60995, "lng": 1.14329 },
+  "price": { "from": 33, "currency": "EUR" },
+  "schedule": { "checkInFrom": "12:00", "checkInUntil": "23:30", "checkOutUntil": "12:30" },
+  "owner": { "name": "Manel", "languages": ["ca", "es", "en", "fr"] },
+  "houses": [
+    {
+      "id": "ca-naleix",
+      "registration": "HUTL-000487",
+      "capacity": 8,
+      "bedrooms": 4,
+      "beds": 7,
+      "bathrooms": 2,
+      "image": "facade"
+    },
+    {
+      "id": "era-cal-roger",
+      "registration": "HUTL-000488",
+      "capacity": 8,
+      "bedrooms": 2,
+      "beds": 4,
+      "bathrooms": 2,
+      "image": "pool"
+    }
+  ],
+  "amenities": [
+    "fireplace", "heating", "aircon", "kitchen", "washer", "microwave",
+    "tv", "music", "foosball", "wifi", "crib", "pets",
+    "terrace", "bbq", "pool", "card"
+  ],
+  "places": [
+    { "id": "castle", "tab": "village" },
+    { "id": "church", "tab": "village" },
+    { "id": "claver", "tab": "village" },
+    { "id": "museum", "tab": "village" },
+    { "id": "ceramics", "tab": "village" },
+    { "id": "talavero", "tab": "village" },
+    { "id": "tarrega", "tab": "around", "km": 5 },
+    { "id": "riding", "tab": "around", "km": 5 },
+    { "id": "guimera", "tab": "around", "km": 12 },
+    { "id": "golf", "tab": "around", "km": 15 },
+    { "id": "cervera", "tab": "around", "km": 19 },
+    { "id": "agramunt", "tab": "around", "km": 23 },
+    { "id": "portaventura", "tab": "around", "km": 70 },
+    { "id": "wine", "tab": "nature" },
+    { "id": "btt", "tab": "nature" },
+    { "id": "ignasi", "tab": "nature" },
+    { "id": "cister", "tab": "nature" },
+    { "id": "ivars", "tab": "nature" },
+    { "id": "harvest", "tab": "festivals", "when": "oct" },
+    { "id": "festamajor", "tab": "festivals", "when": "sep" },
+    { "id": "flavia", "tab": "festivals", "when": "jan" },
+    { "id": "medieval", "tab": "festivals", "when": "aug" }
+  ],
+  "images": {
+    "facade":   { "pexels": 14842919, "ratio": [16, 9] },
+    "door":     { "pexels": 8455428,  "ratio": [2, 3] },
+    "lounge":   { "pexels": 30266114, "ratio": [2, 3] },
+    "fireplace":{ "pexels": 28345539, "ratio": [2, 3] },
+    "bedroom":  { "pexels": 15692775, "ratio": [2, 3] },
+    "dining":   { "pexels": 29148452, "ratio": [9, 16] },
+    "kitchen":  { "pexels": 6752293,  "ratio": [3, 2] },
+    "pool":     { "pexels": 170156,   "ratio": [4, 3] },
+    "arch":     { "pexels": 11086797, "ratio": [3, 4] },
+    "street":   { "pexels": 6572276,  "ratio": [3, 2] },
+    "vineyard": { "pexels": 34574574, "ratio": [4, 3] },
+    "vines":    { "pexels": 1047333,  "ratio": [3, 2] },
+    "hills":    { "pexels": 14515698, "ratio": [3, 2] }
+  },
+  "gallery": ["lounge", "bedroom", "kitchen", "fireplace", "dining", "pool", "door", "street"],
+  "reviews": [
+    { "id": "gloria", "author": "Gloria A.", "source": "Escapada Rural" },
+    { "id": "xenia", "author": "Xènia P.", "source": "Escapada Rural" },
+    { "id": "marc", "author": "Marc P.", "source": "Escapada Rural" },
+    { "id": "francesc", "author": "Francesc P.", "source": "Escapada Rural" }
+  ]
+}
