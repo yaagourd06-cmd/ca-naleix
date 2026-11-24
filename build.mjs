@@ -17,6 +17,7 @@ const readJson = async (p) => JSON.parse(await readFile(join(ROOT, p), 'utf8'));
 
 const site = await readJson('content/site.json');
 if (process.env.SITE_URL) site.siteUrl = process.env.SITE_URL.replace(/\/?$/, '/');
+const photos = await readJson('src/assets/photos/manifest.json');
 const strings = Object.fromEntries(await Promise.all(site.langs.map(async (l) => [l, await readJson(`content/${l}.json`)])));
 
 // ---------------------------------------------------------------- validation
@@ -31,7 +32,7 @@ function validate() {
     site.gallery.forEach((g) => need(t.gallery.alts[g], `gallery image "${g}" has no alt text`));
     site.reviews.forEach((r) => need(t.reviews.items[r.id], `review "${r.id}" has no text`));
     site.houses.forEach((h) => need(t.houses.items[h.id] && t.booking.houseOptions[h.id], `house "${h.id}" is missing texts`));
-    site.gallery.concat(site.houses.map((h) => h.image)).forEach((k) => need(site.images[k], `image "${k}" not in catalogue`));
+    site.gallery.concat(site.houses.map((h) => h.image), ['facade', 'door', 'bedroom', 'vineyard', 'arch']).forEach((k) => need(photos[k], `photo "${k}" missing (src/photos/${k}.jpg + npm run images)`));
   }
   if (errors.length) {
     console.error(`Content errors:\n  ${errors.join('\n  ')}`);
@@ -63,7 +64,18 @@ const ASSETS = [
 
 const manifest = {};
 await rm(DIST, { recursive: true, force: true });
-await mkdir(join(DIST, 'assets'), { recursive: true });
+await mkdir(join(DIST, 'assets/photos'), { recursive: true });
+
+// Photos: copied with a content hash in the name so they can be cached forever.
+const photoFiles = {};
+for (const [key, meta] of Object.entries(photos)) {
+  for (const w of meta.widths) {
+    const buf = await readFile(join(ROOT, 'src/assets/photos', `${key}-${w}.webp`));
+    const name = `${key}-${w}.${hash(buf)}.webp`;
+    photoFiles[`${key}-${w}`] = name;
+    await writeFile(join(DIST, 'assets/photos', name), buf);
+  }
+}
 for (const a of ASSETS) {
   let body = await readFile(join(ROOT, a.src), 'utf8');
   if (a.transform) body = a.transform(body);
@@ -99,6 +111,9 @@ async function renderPage(page, lang, { rootOverride, file: forcedFile } = {}) {
     noindex: Boolean(page.noindex),
     year: new Date().getFullYear(),
     asset: (name) => `${root}assets/${manifest[name]}`,
+    photos,
+    photo: (key, w) => `${root}assets/photos/${photoFiles[`${key}-${w}`]}`,
+    photoAbs: (key, w) => `${site.siteUrl}assets/photos/${photoFiles[`${key}-${w}`]}`,
     pageUrl: (id, l) => `${root}${strings[l].paths[id]}` || './',
     absUrl: (id, l) => `${site.siteUrl}${strings[l].paths[id]}`,
   };

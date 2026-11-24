@@ -267,7 +267,7 @@
         "Finalidad: responder a las solicitudes de disponibilidad y gestionar las reservas. Base jurídica: vuestro consentimiento y la aplicación de medidas precontractuales.",
         "Conservación: los datos se conservan el tiempo necesario para atender la solicitud y cumplir las obligaciones legales. No se ceden a terceros salvo obligación legal.",
         "Derechos: podéis ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a {email}, y presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).",
-        "Recursos externos: esta vista previa carga las fotografías desde Pexels. El mapa de OpenStreetMap solo se carga si lo activáis. En la versión definitiva todas las imágenes se servirán desde el mismo dominio."
+        "Recursos externos: todas las imágenes y archivos se sirven desde este mismo dominio. El único recurso externo es el mapa de OpenStreetMap, que solo se carga si lo activáis."
       ]
     },
     "cookies": {

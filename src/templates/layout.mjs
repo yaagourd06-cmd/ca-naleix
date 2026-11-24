@@ -1,8 +1,8 @@
-import { e, join, icon, pexelsUrl } from './lib.mjs';
+import { e, join, icon } from './lib.mjs';
 
 const CSP = [
   "default-src 'self'",
-  "img-src 'self' https://images.pexels.com data:",
+  "img-src 'self' data:",
   "style-src 'self'",
   "script-src 'self'",
   'frame-src https://www.openstreetmap.org',
@@ -16,7 +16,7 @@ function head(ctx, { title, description, jsonLd }) {
   const alternates = site.langs
     .map((l) => `<link rel="alternate" hreflang="${l}" href="${e(ctx.absUrl(page, l))}">`)
     .join('\n');
-  const og = site.images.facade;
+  const og = ctx.photos.facade;
   return `<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,14 +34,13 @@ ${alternates}
 <meta property="og:description" content="${e(description)}">
 <meta property="og:url" content="${e(ctx.absUrl(page, t.lang))}">
 <meta property="og:locale" content="${e(t.locale)}">
-<meta property="og:image" content="${e(pexelsUrl(og.pexels, 1200, 630))}">
+<meta property="og:image" content="${e(ctx.photoAbs('facade', 1200))}">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="${Math.round((1200 * og.height) / og.width)}">
 <meta property="og:image:alt" content="${e(t.hero.imageAlt)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2b2a24">
 <link rel="icon" href="${ctx.asset('favicon.svg')}" type="image/svg+xml">
-<link rel="preconnect" href="https://images.pexels.com">
 <link rel="stylesheet" href="${ctx.asset('main.css')}">
 <script src="${ctx.asset('boot.js')}"></script>
 <script src="${ctx.asset('main.js')}" defer></script>

@@ -9,6 +9,7 @@
     "build": "node build.mjs",
     "check": "node scripts/check.mjs",
     "test": "node build.mjs && node scripts/check.mjs",
+    "images": "node scripts/images.mjs",
     "serve": "npx --yes serve dist -l 8080"
   }
 }

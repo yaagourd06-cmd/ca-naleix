@@ -267,7 +267,7 @@
         "Finalitat: respondre les sol·licituds de disponibilitat i gestionar les reserves. Base jurídica: el vostre consentiment i l'aplicació de mesures precontractuals.",
         "Conservació: les dades es conserven el temps necessari per atendre la sol·licitud i complir les obligacions legals. No es cedeixen a tercers excepte per obligació legal.",
         "Drets: podeu exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a {email}, i presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (aepd.es).",
-        "Recursos externs: aquesta vista prèvia carrega les fotografies des de Pexels. El mapa d'OpenStreetMap només es carrega si l'activeu. A la versió definitiva totes les imatges se serviran des del mateix domini."
+        "Recursos externs: totes les imatges i fitxers se serveixen des d'aquest mateix domini. L'únic recurs extern és el mapa d'OpenStreetMap, que només es carrega si l'activeu."
       ]
     },
     "cookies": {

@@ -95,8 +95,8 @@ for (const file of files) {
   }
   if (/^(es\/)?index\.html$/.test(file)) ok(/"@type":"LodgingBusiness"/.test(html), 'home without LodgingBusiness JSON-LD');
 
-  // Privacy: nothing third-party loads before consent (Pexels images are the
-  // preview-only exception documented in the README/privacy page).
+  // Privacy: nothing third-party loads before consent; photos are self-hosted.
+  ok(!/<img[^>]+src="https?:/.test(html) && !/srcset="[^"]*https?:/.test(html), 'image loaded from a third-party host');
   ok(!/fonts\.googleapis|fonts\.gstatic|google-analytics|googletagmanager/.test(html), 'third-party font/analytics');
   ok(!/<iframe\b/.test(html), 'iframe rendered without consent');
   ok(/(avis-legal|aviso-legal)\.html/.test(html) && /(privacitat|privacidad)\.html/.test(html) && /cookies\.html/.test(html), 'legal links missing');
@@ -120,7 +120,7 @@ for (const file of files) {
 }
 
 // Assets are fingerprinted (cache-busting) and CSS is minified by the build.
-const assets = await readdir(join(DIST, 'assets'));
+const assets = (await readdir(join(DIST, 'assets'), { recursive: true })).filter((a) => /\.\w+$/.test(a));
 checks++;
 if (!assets.every((a) => /\.[0-9a-f]{10}\.\w+$/.test(a))) failures.push('assets are not fingerprinted');
 const css = await readFile(join(DIST, 'assets', assets.find((a) => a.endsWith('.css'))), 'utf8');

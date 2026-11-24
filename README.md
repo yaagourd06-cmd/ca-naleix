@@ -2,7 +2,7 @@
 
 Web estática bilingüe (catalán / castellano) para **Ca n'Aleix**, casa pairal del siglo XV en Verdú (Urgell), y su casa hermana **L'Era de Cal Roger**.
 
-Esto es una **vista previa de diseño**: las fotos son de stock (Pexels) y el formulario no envía nada. Lo que queda pendiente para la versión definitiva está en [Para pasar a producción](#para-pasar-a-producción).
+Esto es una **vista previa de diseño**: las fotos son de stock (Pexels), pero van alojadas en la propia web, y el formulario no envía nada. Lo que queda pendiente para la versión definitiva está en [Para pasar a producción](#para-pasar-a-producción).
 
 ## Cómo funciona
 
@@ -13,9 +13,11 @@ content/
   es.json        ← textos en castellano (en /es/)
 src/
   templates/     ← plantillas HTML (funciones JS, sin dependencias)
-  assets/        ← CSS, JS e iconos SVG separados
+  assets/        ← CSS, JS, iconos SVG y fotos optimizadas (assets/photos, WebP)
+  photos/        ← fotos originales (no se suben al repo)
 build.mjs        ← generador estático: content + templates → dist/
 scripts/check.mjs← control de calidad del HTML generado
+scripts/images.mjs← originales → WebP en 480/800/1200/1600 px (+2400 el hero)
 .github/workflows/deploy.yml ← build + check + publicación en GitHub Pages
 ```
 
@@ -25,6 +27,7 @@ Cada dato existe **una sola vez**. El precio, los horarios, la capacidad o las d
 npm run build   # genera dist/
 npm run check   # pasa el control de calidad sobre dist/
 npm run serve   # sirve dist/ en http://localhost:8080
+npm run images  # solo si cambian las fotos (necesita sharp)
 ```
 
 Hace falta Node 20 o superior. No hay dependencias que instalar.
@@ -47,7 +50,7 @@ La URL pública está en `content/site.json` (`siteUrl`). También se puede sobr
 | CSS | Solo selectores de clase (no se estilan `section`, `form`, `label` ni `nav` de forma global) y ningún `style=""`. |
 | CSP | Sin `onclick`/`onerror` inline ni scripts ejecutables inline. CSP sin `unsafe-inline`. |
 | Hero | `min-height: 92svh` (con `vh` de respaldo). Imagen con `fetchpriority="high"`, `srcset` y tamaño explícito. No hay valores mágicos que dependan de la altura de otros elementos. |
-| Imágenes | Todas con `width`/`height` (sin CLS), `srcset`/`sizes`, `loading="lazy"` y `alt` descriptivo en los dos idiomas. |
+| Imágenes | Alojadas en la propia web (WebP optimizado, varios tamaños y hash en el nombre para la caché). Todas con `width`/`height` reales (sin CLS), `srcset`/`sizes`, `loading="lazy"` y `alt` descriptivo en los dos idiomas. Ninguna se carga de un servidor externo. |
 | Formulario | `name`/`id`/`label for` en todos los campos, `type="tel"` y `autocomplete`. Las fechas tienen `min` igual a hoy y la salida tiene que ser posterior a la entrada. Se comprueba la capacidad de la casa elegida y hay casilla de privacidad obligatoria. Los errores se anuncian con `aria-live`. Sin JS, el navegador valida y el formulario se envía por `mailto:`. |
 | Accesibilidad | Enlace para saltar al contenido. Pestañas con `role="tab"`, `aria-selected` y teclado (flechas, Inicio, Fin). Menú con `aria-expanded`. Lightbox navegable con teclado que devuelve el foco al cerrar. Se respeta `prefers-reduced-motion`. |
 | Sin JS | Todo el contenido se ve. Las animaciones de entrada solo se aplican si hay JS y el usuario no ha pedido reducir el movimiento. |
@@ -56,7 +59,7 @@ La URL pública está en `content/site.json` (`siteUrl`). También se puede sobr
 
 ## Para pasar a producción
 
-- [ ] **Fotos reales** de la casa en `src/assets/img/`, servidas desde el mismo dominio. Hay que cambiar el catálogo `images` de `site.json` y quitar `images.pexels.com` de la CSP. Si cambia la lista `gallery`, hay que revisar `grid-template-areas` en `main.css`.
+- [ ] **Fotos reales** de la casa: guardarlas en `src/photos/` con el mismo nombre (`facade.jpg`, `bedroom.jpg`…) y ejecutar `npm run images`. Si cambia la lista `gallery`, hay que revisar `grid-template-areas` en `main.css`.
 - [ ] **Formulario**: conectarlo a un endpoint (Formspree, Netlify Forms o un script propio) y añadir ese dominio a `form-action` en la CSP.
 - [ ] **Datos que hay que confirmar con el propietario**: horarios de entrada y salida, precio desde 33 €, piscina (sale en las opiniones pero no en la ficha), distribución exacta de los dormitorios y datos de L'Era de Cal Roger.
 - [ ] **Titular legal** (nombre/razón social y NIF) en los textos legales de `ca.json` y `es.json`.

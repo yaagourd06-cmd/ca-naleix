@@ -1,4 +1,4 @@
-import { e, fill, fillHtml, join, img, icon, pexelsUrl } from './lib.mjs';
+import { e, fill, fillHtml, join, img, icon } from './lib.mjs';
 
 const mainHouse = (site) => site.houses[0];
 
@@ -7,9 +7,9 @@ function hero(ctx) {
   const q = t.hero.quick;
   return `<section class="hero" aria-labelledby="hero-title">
   <div class="hero__media">
-    ${img(site, 'facade', {
+    ${img(ctx, 'facade', {
       alt: t.hero.imageAlt,
-      widths: [800, 1280, 1920, 2560],
+      max: 2400,
       sizes: '100vw',
       eager: true,
       cls: 'hero__img',
@@ -69,8 +69,8 @@ ${stats}
       </ul>
     </div>
     <div class="house__collage reveal" aria-hidden="false">
-      ${img(site, 'door', { alt: t.house.imageAlt, widths: [400, 640, 960], sizes: '(min-width: 64em) 22vw, 45vw', cls: 'house__img house__img--tall' })}
-      ${img(site, 'bedroom', { alt: t.gallery.alts.bedroom, widths: [400, 640, 960], sizes: '(min-width: 64em) 22vw, 45vw', cls: 'house__img house__img--offset' })}
+      ${img(ctx, 'door', { alt: t.house.imageAlt, sizes: '(min-width: 64em) 22vw, 45vw', cls: 'house__img house__img--tall' })}
+      ${img(ctx, 'bedroom', { alt: t.gallery.alts.bedroom, sizes: '(min-width: 64em) 22vw, 45vw', cls: 'house__img house__img--offset' })}
     </div>
   </div>
   <div class="wrap house__details">
@@ -120,13 +120,11 @@ function gallery(ctx) {
   const total = site.gallery.length;
   const items = site.gallery
     .map((key, i) => {
-      const meta = site.images[key];
-      const [rw, rh] = meta.ratio;
-      const big = pexelsUrl(meta.pexels, 1800, Math.round((1800 * rh) / rw));
+      const big = ctx.photo(key, Math.max(...ctx.photos[key].widths));
       const alt = t.gallery.alts[key];
       return `<li class="gallery__item gallery__item--${key}">
         <a class="gallery__link" href="${e(big)}" data-lightbox="${i}" data-full="${e(big)}" data-alt="${e(alt)}">
-          ${img(site, key, { alt, widths: [400, 700, 1000], sizes: '(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw', cls: 'gallery__img' })}
+          ${img(ctx, key, { alt, sizes: '(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw', cls: 'gallery__img' })}
           <span class="visually-hidden">${e(t.ui.openPhoto)} · ${fill(t.ui.photoOf, { n: i + 1, total })}</span>
         </a>
       </li>`;
@@ -161,7 +159,7 @@ function houses(ctx) {
     .map((h) => {
       const c = t.houses.items[h.id];
       return `<li class="house-card reveal">
-        ${img(site, h.image, { alt: c.alt, ratio: [4, 3], widths: [480, 800, 1100], sizes: '(min-width: 48em) 45vw, 100vw', cls: 'house-card__img' })}
+        ${img(ctx, h.image, { alt: c.alt, max: 1200, sizes: '(min-width: 48em) 45vw, 100vw', cls: 'house-card__img' })}
         <div class="house-card__body">
           <h3 class="house-card__title">${e(c.name)}</h3>
           <p>${e(c.text)}</p>
@@ -219,8 +217,8 @@ ${places}
     .join('\n');
   return `<section class="section surroundings" id="entorn" aria-labelledby="entorn-title">
   <div class="surroundings__media">
-    ${img(site, 'vineyard', { alt: s.imageAlt, widths: [800, 1280, 1920], sizes: '(min-width: 64em) 50vw, 100vw', cls: 'surroundings__img' })}
-    ${img(site, 'arch', { alt: s.image2Alt, widths: [360, 560, 800], sizes: '(min-width: 64em) 18vw, 40vw', cls: 'surroundings__inset' })}
+    ${img(ctx, 'vineyard', { alt: s.imageAlt, sizes: '(min-width: 64em) 50vw, 100vw', cls: 'surroundings__img' })}
+    ${img(ctx, 'arch', { alt: s.image2Alt, sizes: '(min-width: 64em) 18vw, 40vw', cls: 'surroundings__inset' })}
   </div>
   <div class="surroundings__content">
     <p class="kicker">${e(s.kicker)}</p>
@@ -425,7 +423,7 @@ function jsonLd(ctx) {
     name: site.name,
     description: t.meta.description,
     url: ctx.absUrl('home', t.lang),
-    image: pexelsUrl(site.images.facade.pexels, 1600, 900),
+    image: ctx.photoAbs('facade', 1600),
     email: site.email,
     priceRange: `${t.ui.from} ${site.price.from} € ${t.ui.perNight}`,
     currenciesAccepted: site.price.currency,

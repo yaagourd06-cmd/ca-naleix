@@ -560,6 +560,10 @@ textarea {
     width: 6.5rem;
   }
 
+  .hero__media::after {
+    background: linear-gradient(180deg, rgb(20 18 14 / 0.35) 0%, rgb(20 18 14 / 0.55) 45%, rgb(20 18 14 / 0.8) 100%);
+  }
+
   .seal__price {
     font-size: 2rem;
   }

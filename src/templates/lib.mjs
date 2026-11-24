@@ -16,31 +16,23 @@ export const fillHtml = (text, vars = {}) =>
 /** Join template parts, dropping falsy values. */
 export const join = (parts) => parts.filter(Boolean).join('\n');
 
-const PEXELS = 'https://images.pexels.com/photos';
-
-/** Build a cropped Pexels CDN URL at an exact size. */
-export function pexelsUrl(id, w, h) {
-  return `${PEXELS}/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=${w}&h=${h}`;
-}
-
 /**
- * Responsive <img> with explicit width/height (no CLS), srcset and sizes.
- * `ratio` can override the catalogue ratio to crop differently per use.
+ * Responsive <img> served from the site's own optimised WebP files.
+ * Width/height come from the real photo, so the browser reserves space (no CLS).
+ * `max` caps the largest candidate for small slots (thumbnails, cards).
  */
-export function img(site, key, opts) {
-  const meta = site.images[key];
-  if (!meta) throw new Error(`Unknown image "${key}"`);
-  const [rw, rh] = opts.ratio || meta.ratio;
-  const widths = opts.widths || [480, 800, 1200];
-  const h = (w) => Math.round((w * rh) / rw);
-  const srcset = widths.map((w) => `${pexelsUrl(meta.pexels, w, h(w))} ${w}w`).join(', ');
-  const base = widths[Math.min(1, widths.length - 1)];
+export function img(ctx, key, opts) {
+  const meta = ctx.photos[key];
+  if (!meta) throw new Error(`Unknown photo "${key}" (add src/photos/${key}.jpg and run npm run images)`);
+  const widths = meta.widths.filter((w) => w <= (opts.max || 1600));
+  const base = widths.includes(800) ? 800 : widths[widths.length - 1];
+  const h = Math.round((base * meta.height) / meta.width);
   const attrs = [
-    `src="${e(pexelsUrl(meta.pexels, base, h(base)))}"`,
-    `srcset="${e(srcset)}"`,
+    `src="${e(ctx.photo(key, base))}"`,
+    `srcset="${e(widths.map((w) => `${ctx.photo(key, w)} ${w}w`).join(', '))}"`,
     `sizes="${e(opts.sizes || '100vw')}"`,
     `width="${base}"`,
-    `height="${h(base)}"`,
+    `height="${h}"`,
     `alt="${e(opts.alt)}"`,
     opts.eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"',
     'decoding="async"',
